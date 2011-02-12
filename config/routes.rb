@@ -1,4 +1,18 @@
 Paleo::Application.routes.draw do
+  get "pages/search"
+
+  get "pages/contact"
+
+  get "pages/about"
+
+  get "search/contact"
+
+  get "search/about"
+
+  resources :recipes
+
+  match "/search/(:search_terms)" => "pages#search", :as => "search"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

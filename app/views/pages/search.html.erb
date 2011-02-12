@@ -1,0 +1,29 @@
+<h1>Search for your recipes</h1>
+
+<form action="/search" class="" id="search-form" method="get">
+  <div style="margin:0;padding:0;display:inline">
+  </div>
+  <label for="search_terms">What are looking for? </label>:
+  <input id="search_terms" name="search_terms" size="30" type="text" /><br />
+
+  <input id="search_submit" name="commit" type="submit" value="Search!" />
+</form>
+
+<br/><%= link_to "Add a recipe", new_recipe_path() %><br/>
+
+</br>
+<br/>
+<div id="recipes" >
+<% if @recipes %>
+
+<div>
+Search found: <%= @recipes.count %> results.
+</div>
+
+<% @recipes.each_with_index do |r, index| %>
+  <%= index + 1 %>. <b><%= link_to r.name, recipe_path(r) %></b>: <%= truncate(r.instructions, :length => 15) %><br/>
+<% end %>
+<% else %>
+  No recipes found...submit one! 
+<% end %>
+</div>
