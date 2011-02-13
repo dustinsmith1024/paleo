@@ -7,8 +7,21 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+<div id="header">
+  <ul id="header-links">
+    <li class="left"><%= link_to "Search", search_path %></li>
+    <li class="left"><%= link_to "Add a recipe", new_recipe_path() %></li>
+    <li class="left"><%= link_to "Proteins", recipes_path(:category => "protein") %></li>
+    <li class="left"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
+    <li class="right"><%= link_to "Sign In", search_path %>**</li>
+  </ul>
+</div>
+<br/><br/>
+<div id="body">
+  <div id="body-text">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

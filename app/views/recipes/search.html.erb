@@ -1,0 +1,36 @@
+
+<form action="/search" class="" id="search-form" method="get">
+  <div style="margin:0;padding:0;display:inline">
+  </div>
+  <label for="search"><p class="big">What ingredients are you looking for?</p></label>
+  <input id="search" name="search" size="30" type="text" value="<%= params[:search] || ""  %>"/>
+
+  <input id="search_submit" name="commit" type="submit" value="Search!" />
+</form>
+
+<br/><br/>
+
+</br>
+<br/>
+<div id="recipes" >
+  <% if @recipes && params[:search] %>
+
+    <div class="results">
+      Found: <%= @recipes.count %>
+      <% if @recipes.count > 1 %>
+        recipes.
+      <% elsif @recipes.count == 0 %>
+        recipes. Sorry try another search term?
+      <% elsif @recipes.count == 1 %>
+        recipe.
+      <% end %>
+    </div>
+    <br/><br/>
+    <% @recipes.each_with_index do |r, index| %>
+      <%= index + 1 %>. <b><%= link_to r.name, recipe_path(r) %></b>: <%= truncate(r.instructions, :length => 15) %><br/>
+    <% end %>
+
+  <% else %>
+   
+  <% end %>
+</div>

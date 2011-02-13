@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
   def index
-    @recipes = Recipe.all
+    if params[:category]
+      @recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:category] + "%", '%' + params[:category] + "%"])
+    else
+      @recipes = Recipe.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +33,14 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @recipe }
+    end
+  end
+
+  def search ## SEARCHED FOR RECIPES BASED ON NAME AND INSTRUCTIONS/WILL NEED AN INGREDIENT ONE LATER...
+    if params[:search]
+      @recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:search] + "%", '%' + params[:search] + "%"])
+    else
+      @recipes = [] 
     end
   end
 

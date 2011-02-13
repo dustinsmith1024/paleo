@@ -11,7 +11,8 @@ Paleo::Application.routes.draw do
 
   resources :recipes
 
-  match "/search/(:search_terms)" => "pages#search", :as => "search"
+  match "/search/(:search_terms)" => "recipes#search", :as => "search"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,7 +63,7 @@ Paleo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "recipes#search"
 
   # See how all your routes lay out with "rake routes"
 

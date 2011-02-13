@@ -1,0 +1,44 @@
+ul#header-links {
+  display: inline;
+}
+
+ul#header-links li {
+  display: inline;
+  padding: 10px;
+  background: orange;
+  color: brown;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border: 1px solid brown;
+}
+
+ul#header-links li.right {
+  float: right;
+  margin-right: 10px;
+}
+
+ul#header-links li a, ul#header-links li a:visited {
+  color: brown;
+}
+ul#header-links li a:hover {
+  color: brown;
+  font-weight: bold;
+  background: orange;
+
+}
+#body {
+  text-align: center;
+}
+#body-text {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 60em;
+}
+p.big{
+  display: inline;
+  font-size: 1.5em;
+}
+div.results{
+  font-size: 1.2em;
+}
