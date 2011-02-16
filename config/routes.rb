@@ -1,4 +1,5 @@
 Paleo::Application.routes.draw do
+
   get "pages/search"
 
   get "pages/contact"
@@ -9,7 +10,9 @@ Paleo::Application.routes.draw do
 
   get "search/about"
 
-  resources :recipes
+  resources :recipes do
+    resources :ingredients
+  end
 
   match "/search/(:search_terms)" => "recipes#search", :as => "search"
   

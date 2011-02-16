@@ -1,8 +1,7 @@
-
 <form action="/search" class="" id="search-form" method="get">
   <div style="margin:0;padding:0;display:inline">
   </div>
-  <label for="search"><p class="big">What ingredients are you looking for?</p></label>
+  <label for="search" class="big">What ingredients are you looking for?</label><br/>
   <input id="search" name="search" size="30" type="text" value="<%= params[:search] || ""  %>"/>
 
   <input id="search_submit" name="commit" type="submit" value="Search!" />

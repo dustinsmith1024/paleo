@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  amount: 1
+  measurement: MyString
+  name: MyString
+  recipe: 
+
+two:
+  amount: 1
+  measurement: MyString
+  name: MyString
+  recipe: 

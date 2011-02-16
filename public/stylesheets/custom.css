@@ -1,9 +1,15 @@
 ul#header-links {
   display: inline;
+  margin-left:auto;
+  margin-right: auto;
 }
-
+#header {
+  text-align: center;
+  border-bottom: 1px solid brown;
+  padding: 2px;
+}
 ul#header-links li {
-  display: inline;
+  display: inline-block;
   padding: 10px;
   background: orange;
   color: brown;
@@ -24,18 +30,26 @@ ul#header-links li a:hover {
   color: brown;
   font-weight: bold;
   background: orange;
-
+}
+ul#header-links {
+  padding: 2px;
+  margin: 0px;
 }
 #body {
   text-align: center;
+  border-top: 1px solid orange;
+  padding: 10px;
+}
+body{
+  margin-top: 0px;
 }
 #body-text {
   margin-left: auto;
   margin-right: auto;
-  text-align: left;
+  text-align: center;
   width: 60em;
 }
-p.big{
+.big{
   display: inline;
   font-size: 1.5em;
 }

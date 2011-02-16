@@ -1,0 +1,25 @@
+<h1>Listing ingredients</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Measurement</th>
+    <th>Name</th>
+    <th>Recipe</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ingredients.each do |ingredient| %>
+  <tr>
+    <td><%= ingredient.amount %></td>
+    <td><%= ingredient.measurement %></td>
+    <td><%= ingredient.name %></td>
+    <td><%= ingredient.recipe %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
