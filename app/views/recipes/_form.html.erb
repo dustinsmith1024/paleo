@@ -14,9 +14,23 @@
   <%= f.label :name %><br />
   <%= f.text_field :name %><br />
 
+  <div id="ingredients" >
+  <% @counter = 0 %>
   <% f.fields_for :ingredients do |builder| %>
     <%= render "ingredients", :f => builder %>
+   <% @counter += 1 %>
   <% end %>
+  <a href="#" >ADD ANOITHER!  JS IN THE VIEW COMMENTS</a>
+<%#$("p.ingredient:first").clone().appendTo("#ingredients")  %>
+<%#$("p.ingredient").last().children().first().next().attr("name").split("][")[1] %>
+<%#
+one = $("p.ingredient").last().children().first().next().attr("name").split("][")[0];
+two = parseInt($("p.ingredient").last().children().first().next().attr("name").split("][")[1]) + 1;
+three = $("p.ingredient").last().children().first().next().attr("name").split("][")[2];
+one + "][" + two + "]["+three;
+
+%>
+  </div>
   <%#= render "ingredients", :f => @recipe.ingredients.build %>
 
   <%= f.label :instructions %><br />
