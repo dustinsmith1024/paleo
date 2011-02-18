@@ -56,3 +56,6 @@ body{
 div.results{
   font-size: 1.2em;
 }
+form {
+  text-align: left;
+}

@@ -11,18 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :instructions %><br />
-    <%= f.text_area :instructions %>
-  </div>
-  <div class="field">
-    <%= f.label :approved %><br />
-    <%= f.check_box :approved %>
-  </div>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+
+  <% f.fields_for :ingredients do |builder| %>
+    <%= render "ingredients", :f => builder %>
+  <% end %>
+  <%#= render "ingredients", :f => @recipe.ingredients.build %>
+
+  <%= f.label :instructions %><br />
+  <%= f.text_area :instructions %><br />
+  <%= f.label :approved %><br />
+  <%= f.check_box :approved %><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
