@@ -10,8 +10,10 @@
 <div id="header">
   <ul id="header-links">
     <li class="left bold "><%= link_to "Search", search_path %></li>
-    <li class="left"><%= link_to "Proteins", recipes_path(:category => "protein") %></li>
-    <li class="left"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
+    <li class="left red"><%= link_to "Beef", recipes_path(:category => "beef") %></li>
+    <li class="left white"><%= link_to "Chicken", recipes_path(:category => "chicken") %></li>
+    <li class="left blue"><%= link_to "Fish", recipes_path(:category => "fish") %></li>
+    <li class="left green"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
     <li class="left"><%= link_to "Add a recipe", new_recipe_path() %></li>
     <li class="left"><%= link_to "Sign In", search_path %></li>
   </ul>

@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   # GET /recipes.xml
   def index
     if params[:category]
+   ## MOVE TO MODEL  ->  NEED TO SEARCH BY INGREDIENTS
       @recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:category] + "%", '%' + params[:category] + "%"])
     else
       @recipes = Recipe.all

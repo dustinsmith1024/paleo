@@ -3,19 +3,37 @@ ul#header-links {
   margin-left:auto;
   margin-right: auto;
 }
+.short {
+  width: 4em;;
+}
+.amount {
+  width: 3em;
+}
+.name {
+  width: 7em;
+}
+#recipe_instructions {
+  width: 35em;
+  height: 20em;
+}
 #header {
   text-align: center;
-  border-bottom: 1px solid brown;
-  padding: 2px;
+  border-bottom: 3px solid brown;
+  padding: 0px;
+  padding-top: 5px;
 }
 ul#header-links li {
   display: inline-block;
   padding: 10px;
   background: orange;
   color: brown;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  border: 1px solid brown;
+  border-radius: 15px 13px 1px 1px;
+  -moz-border-radius: 15px 1px 1px 1px;
+  border: 2px solid brown;
+  border-color: brown brown orange;
+  border-width: 2px 2px 0;
+  border-style: solid;
+  margin: 4px -6px 0;
 }
 
 ul#header-links li.right {
@@ -59,3 +77,19 @@ div.results{
 form {
   text-align: left;
 }
+form#search-form {
+  text-align: center;
+}
+ul#header-links li.blue{
+  background: blue;
+}
+ul#header-links li.green{
+  background: green;
+}
+ul#header-links li.red{
+  background: red;
+}
+ul#header-links li.white{
+  background: white;
+}
+

@@ -1,3 +1,4 @@
- <p class="ingredient" id="ingredient-<%= @counter %>"><%= f.label :amount %>  <%= f.text_field :amount %>
-<%= f.label :measurement %> <%= f.text_field :measurement %>
-<%= f.label :name %> <%= f.text_field :name %></p>
+<p class="ingredient" id="ingredient-<%= @counter %>">
+<%= f.text_field :amount, :class => "amount short" %>
+<%= f.text_field :measurement, :class => "measure short" %>
+of <%= f.text_field :name, :class => "name short" %></p>
