@@ -14,9 +14,9 @@
     <li class="left white"><%= link_to "Chicken", recipes_path(:category => "chicken") %></li>
     <li class="left blue"><%= link_to "Fish", recipes_path(:category => "fish") %></li>
     <li class="left green"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
-    <li class="left"><%= link_to "Add a recipe", new_recipe_path() %></li>
-    <li class="left"><%= link_to "Sign In", search_path %></li>
   </ul>
+  <%= link_to "Sign In", search_path, :class => 'right account-action' %> 
+  <%= link_to "Add a recipe", new_recipe_path(), :class => 'right account-ability'  %> 
 </div>
 <div id="body">
   <div id="body-text">

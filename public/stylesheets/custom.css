@@ -24,7 +24,7 @@ ul#header-links {
 }
 ul#header-links li {
   display: inline-block;
-  padding: 10px;
+  padding: 8px;
   background: orange;
   color: brown;
   border-radius: 15px 13px 1px 1px;
@@ -34,20 +34,31 @@ ul#header-links li {
   border-width: 2px 2px 0;
   border-style: solid;
   margin: 4px -6px 0;
+  width: 85px;
 }
 
 ul#header-links li.right {
   float: right;
   margin-right: 10px;
 }
-
+a.right {
+  position: absolute;
+}
+a.account-action{
+  right: 1em;
+}
+a.account-ability{
+  right: 5em;
+}
 ul#header-links li a, ul#header-links li a:visited {
-  color: brown;
+  color: black;
+  text-decoration: none;
 }
 ul#header-links li a:hover {
-  color: brown;
-  font-weight: bold;
+  color: black;
+  font-weight: ;
   background: orange;
+  text-decoration: none;
 }
 ul#header-links {
   padding: 2px;
@@ -81,13 +92,15 @@ form#search-form {
   text-align: center;
 }
 ul#header-links li.blue{
-  background: blue;
+  background: #94C1C1;
 }
-ul#header-links li.green{
+ul#header-links li.green, ul#header-links li.green a {
   background: green;
+  color: white;
 }
-ul#header-links li.red{
-  background: red;
+ul#header-links li.red, ul#header-links li.red a {
+  background: #8D282B;
+  color: white;
 }
 ul#header-links li.white{
   background: white;

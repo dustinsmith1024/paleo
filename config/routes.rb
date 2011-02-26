@@ -15,6 +15,7 @@ Paleo::Application.routes.draw do
   end
 
   match "/search/(:search_terms)" => "recipes#search", :as => "search"
+#  match "/search/(:search_terms)" => "recipes#search", :as => "search", :method => :post
   
 
   # The priority is based upon order of creation:
