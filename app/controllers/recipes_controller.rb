@@ -45,11 +45,23 @@ class RecipesController < ApplicationController
     else
       @recipes = [] 
     end
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @recipes }
+      format.js   { render :layout => false } 
+    end
+
   end
 
   # GET /recipes/1/edit
   def edit
     @recipe = Recipe.find(params[:id])
+    if @recipe.ingredients.empty?
+    3.times do
+      ingredient = @recipe.ingredients.build()
+    end
+    end
   end
 
   # POST /recipes

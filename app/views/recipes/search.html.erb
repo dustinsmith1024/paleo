@@ -1,4 +1,4 @@
-<form action="/search" class="" id="search-form" method="get">
+<form action="/search" class="" id="search-form" method="get" data-remote="true">
   <div style="margin:0;padding:0;display:inline">
   </div>
   <label for="search" class="big">What ingredients are you looking for?</label><br/>
@@ -14,7 +14,7 @@
 <div id="recipes" >
   <% if @recipes && params[:search] %>
 
-    <div class="results">
+    <div id="results" class="results">
       Found: <%= @recipes.count %>
       <% if @recipes.count > 1 %>
         recipes.
@@ -25,10 +25,11 @@
       <% end %>
     </div>
     <br/><br/>
+    <div id="list">
     <% @recipes.each_with_index do |r, index| %>
       <%= index + 1 %>. <b><%= link_to r.name, recipe_path(r) %></b>: <%= truncate(r.instructions, :length => 15) %><br/>
     <% end %>
-
+    </div>
   <% else %>
    
   <% end %>

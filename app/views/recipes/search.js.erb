@@ -1,0 +1,13 @@
+$("div#recipes").html('<div id="results"></div>');
+
+<% if @recipes.count > 0 %>
+$("div#recipes > #results").append("<h3>Found <%= pluralize(@recipes.count,'recipe') %>.<h3><ol id='list'></ol>");
+
+<% @recipes.each_with_index do |recipe,index| %>
+
+$("#list").append('<li><b><%=h link_to recipe.name.gsub(/\'/,"\\'"), recipe_path(recipe) %></b>: <%= recipe.ingredients.collect{|i|i.name}.to_sentence %><br/> <%=h truncate(recipe.instructions.gsub(/\n/," ").gsub(/\r/," "), :length => 80) %></li>');
+
+<% end %>
+<% else %>
+$("div#recipes > #results").append("<h2>Found no recipes. Try another term?<h2>");
+<% end %>
