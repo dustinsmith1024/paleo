@@ -40,10 +40,12 @@ class RecipesController < ApplicationController
   end
 
   def search ## SEARCHED FOR RECIPES BASED ON NAME AND INSTRUCTIONS/WILL NEED AN INGREDIENT ONE LATER...
+    @recipes = []
+
     if params[:search]
       @recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:search] + "%", '%' + params[:search] + "%"])
-    else
-      @recipes = [] 
+#      @recipes << Recipe.find_by_name(params[:search])
+#    loop through the ingredients and search for them base on the name
     end
 
     respond_to do |format|
