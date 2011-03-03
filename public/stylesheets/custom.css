@@ -12,6 +12,10 @@ ul#header-links {
 .name {
   width: 7em;
 }
+#body{
+	background-color: #F3E4CE;
+	min-height: 400px;
+}
 #recipe_instructions {
   width: 35em;
   height: 20em;
@@ -21,6 +25,22 @@ ul#header-links {
   border-bottom: 3px solid brown;
   padding: 0px;
   padding-top: 5px;
+}
+#logo{
+  display: inline-block;
+  float:left;
+  text-align:left;
+  font-size: large;
+  padding-top: 8px;
+  padding-left: 5px;
+  margin-right: -105px;
+}
+#welcome-message{
+	margin:10px;
+	font-size: large;
+	background-color: #FFDAA3;
+	padding: 6px;
+	border: 1px solid orange;
 }
 ol#list {
   text-align: left;
