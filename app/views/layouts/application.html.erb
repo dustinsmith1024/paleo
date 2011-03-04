@@ -8,13 +8,15 @@
 </head>
 <body>
 <div id="header">
-<div id="logo">ONLY PALEO*logo*</div>
-  <ul id="header-links">
-    <li class="left bold "><%= link_to "Search", search_path %></li>
-    <li class="left red"><%= link_to "Beef", recipes_path(:category => "beef") %></li>
-    <li class="left white"><%= link_to "Chicken", recipes_path(:category => "chicken") %></li>
-    <li class="left blue"><%= link_to "Fish", recipes_path(:category => "fish") %></li>
-    <li class="left green"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
+<div id="logo">ONLY PALEO</div>
+  <ul id="header-links-new">
+	<% logger.info(request.env['REMOTE_ADDR']) %>
+	<% logger.info(request.env['REQUEST_URI']) %>
+    <li class="left bold <%= 'active' if request.env['REQUEST_URI'] =~ /search/ %>"><%= link_to "Search", search_path %></li>
+    <li class="left red <%= 'active' if request.env['REQUEST_URI'] =~ /beef/ %>"><%= link_to "Beef", recipes_path(:category => "beef") %></li>
+    <li class="left white <%= 'active' if request.env['REQUEST_URI'] =~ /chicken/ %>"><%= link_to "Chicken", recipes_path(:category => "chicken") %></li>
+    <li class="left blue <%= 'active' if request.env['REQUEST_URI'] =~ /fish/ %>"><%= link_to "Fish", recipes_path(:category => "fish") %></li>
+    <li class="left green <%= 'active' if request.env['REQUEST_URI'] =~ /vegetable/ %>"><%= link_to "Veggies", recipes_path(:category => "vegetable") %></li>
   </ul>
   <%= link_to "Sign In", search_path, :class => 'right account-action' %> 
   <%= link_to "Add a recipe", new_recipe_path(), :class => 'right account-ability'  %> 

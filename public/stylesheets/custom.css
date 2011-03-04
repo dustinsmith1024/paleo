@@ -13,7 +13,8 @@ ul#header-links {
   width: 7em;
 }
 #body{
-	background-color: #F3E4CE;
+	/*background-color: #F3E4CE;*/
+	background-color: white;
 	min-height: 400px;
 }
 #recipe_instructions {
@@ -22,7 +23,7 @@ ul#header-links {
 }
 #header {
   text-align: center;
-  border-bottom: 3px solid brown;
+  /*border-bottom: 1px solid orange;*/
   padding: 0px;
   padding-top: 5px;
 }
@@ -59,7 +60,27 @@ ul#header-links li {
   margin: 4px -6px 0;
   width: 85px;
 }
-
+ul#header-links-new li a {
+  text-decoration: none;
+  border-top: 2px solid orange;
+  padding: 8px;
+  margin: -3px;
+  font-size: 1.1em;
+}
+ul#header-links-new li.active a {
+  border-top: 2px solid brown;
+}
+ul#header-links-new li a:hover {
+  text-decoration: none;
+  background-color: white;
+  color: orange;
+  /*border-bottom: 3px solid orange;*/
+}
+ul#header-links-new li {
+  display: inline-block;
+  padding: 2px;
+  background: white;
+}
 ul#header-links li.right {
   float: right;
   margin-right: 10px;
@@ -69,9 +90,11 @@ a.right {
 }
 a.account-action{
   right: 1em;
+  top: 1em;
 }
 a.account-ability{
   right: 5em;
+  top: 1em;
 }
 ul#header-links li a, ul#header-links li a:visited {
   color: black;
@@ -89,7 +112,7 @@ ul#header-links {
 }
 #body {
   text-align: center;
-  border-top: 1px solid orange;
+  border-top: 2px solid orange;
   padding: 10px;
 }
 body{
@@ -104,6 +127,9 @@ body{
 .big{
   display: inline;
   font-size: 1.5em;
+}
+#search-box{
+	margin-top:10px;
 }
 div.results{
   font-size: 1.2em;

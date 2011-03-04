@@ -1,7 +1,7 @@
 $("div#recipes").html('<div id="results"></div>');
 
 <% if @recipes.count > 0 %>
-$("div#recipes > #results").append("<h3>Found <%= pluralize(@recipes.count,'recipe') %>.<h3><ol id='list'></ol>");
+$("div#recipes > #results").append("<h3>Found <%= pluralize(@recipes.count,'recipe') %>.</h3><ol id='list'></ol>");
 
 <% @recipes.each_with_index do |recipe,index| %>
 
