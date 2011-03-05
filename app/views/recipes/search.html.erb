@@ -15,24 +15,15 @@
 <br/>
 <div id="recipes" >
   <% if @recipes && params[:search] %>
-
-    <div id="results" class="results">
-      Found: <%= @recipes.count %>
-      <% if @recipes.count > 1 %>
-        recipes.
-      <% elsif @recipes.count == 0 %>
-        recipes. Sorry try another search term?
-      <% elsif @recipes.count == 1 %>
-        recipe.
-      <% end %>
-    </div>
-    <br/><br/>
-    <div id="list">
-    <% @recipes.each_with_index do |r, index| %>
-      <%= index + 1 %>. <b><%= link_to r.name, recipe_path(r) %></b>: <%= truncate(r.instructions, :length => 15) %><br/>
+<div id="results">
+    <ol id='list'></ol>
+    <% @recipes.each_with_index do |recipe, index| %>
+      <li>
+	    <b><%= link_to recipe.name, recipe_path(recipe) %></b>: <%= recipe.ingredients.collect{|i|i.name}.to_sentence %><br/> 
+	    <%= truncate(recipe.instructions) %>
     <% end %>
-    </div>
+    </ol>
   <% else %>
-   
+   </div>
   <% end %>
 </div>

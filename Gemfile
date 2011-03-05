@@ -7,6 +7,9 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 gem 'jquery-rails'
+gem 'meta_where'
+gem 'meta_search'
+gem 'hirb'
 # Use unicorn as the web server
 # gem 'unicorn'
 
