@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'meta_where'
 gem 'meta_search'
 gem 'hirb'
+gem 'rmagick'
+gem 'carrierwave'
 # Use unicorn as the web server
 # gem 'unicorn'
 

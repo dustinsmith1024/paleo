@@ -38,13 +38,34 @@ class RecipesController < ApplicationController
       format.xml  { render :xml => @recipe }
     end
   end
+    def search ## SEARCHED FOR RECIPES BASED ON NAME AND INSTRUCTIONS/WILL NEED AN INGREDIENT ONE LATER...
+      @recipes = []
+      
+      if !params[:search].blank?
+        search = params[:search].split(' ')
+        search.each_with_index do |s,index|
+          s = "%#{s}%"
+          @recipes << Recipe.joins(:ingredients).find(:all, :conditions => ["recipes.name LIKE (?) or instructions like (?) or ingredients.name like (?)", s, s, s])
+        end
+        @recipes.flatten!.uniq!
+      end
+logger.info(@recipes.to_json)
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @recipes }
+        format.js   { render :layout => false } 
+      end
 
-  def search ## SEARCHED FOR RECIPES BASED ON NAME AND INSTRUCTIONS/WILL NEED AN INGREDIENT ONE LATER...
+    end
+
+  def search2 ## SEARCHED FOR RECIPES BASED ON NAME AND INSTRUCTIONS/WILL NEED AN INGREDIENT ONE LATER...
     @recipes = []
 
     if params[:search]
-      @recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:search] + "%", '%' + params[:search] + "%"])
-#      @recipes << Recipe.find_by_name(params[:search])
+      #@recipes = Recipe.find(:all, :conditions => ["name like ? or instructions like ?",'%' + params[:search] + "%", '%' + params[:search] + "%"])
+      params[:search] = '%' + params[:search] + '%'
+      @recipes = Recipe.joins(:ingredients).where((:name.matches % params[:search]) | {:ingredients => [:name.matches % params[:search]]}).uniq
+
 #    loop through the ingredients and search for them base on the name
     end
 
